@@ -1,0 +1,26 @@
+<td class="text-center">
+ <a href="{%url 'Eliminar' comentario.id%}">Eliminar</a>
+
+ </td>
+ 
+ 
+
+{% comment %}
+<h2>{{ titulo }}</h2>
+<table>
+  <tr>
+    <th>Usuario</th>
+    <th>Comentario</th>
+    <th>Fecha</th>
+  </tr>
+  {% for c in comentario %}
+  <tr>
+    <td>{{ c.usuario }}</td>
+    <td>{{ c.coment }}</td>
+    <td>{{ c.created }}</td>
+  </tr>
+  {% empty %}
+  <tr><td colspan="3">No hay comentarios.</td></tr>
+  {% endfor %}
+</table>
+{% endcomment %}

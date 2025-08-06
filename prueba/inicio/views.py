@@ -1,4 +1,7 @@
 from django.shortcuts import render, HttpResponse
+from registros.models import ComentarioContacto
+
+
 
 # Create your views here.
 
@@ -36,6 +39,14 @@ def formulario(request):
     return render(request, 'inicio/formulario.html', {'contenido': contenido})
 
 
+
+
+def comentarios(request):
+    comentarios = ComentarioContacto.objects.all()
+    return render(request, 'inicio/comentarios', {'comentarios': comentarios})
+
+
 def ejemplo(request):
     return render(request, 'inicio/ejemplo.html')
-        
+
+
